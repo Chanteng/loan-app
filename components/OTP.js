@@ -23,8 +23,8 @@ const OTP = () => {
     const phoneProvider = new firebase.auth.PhoneAuthProvider();
     phoneProvider
       .verifyPhoneNumber(phoneNumber, recaptchaVerifier.current)
-      .then(sendVerification);
-    setphoneNumber("");
+      .then(setVerificationId);
+    setPhoneNumber("");
   };
 
   const confirmCode = () => {
@@ -46,38 +46,35 @@ const OTP = () => {
   };
 
   return (
-    <>
-      <View style={styles.container}>
-        <FirebaseRecaptchaVerifierModal
-          ref={recaptchaVerifier}
-          firebaseConfig={firebaseConfig}
-        />
-        <Text style={styles.otpText}>Login using OTP</Text>
-        <TextInput
-          placeholder="Phone Number with Country Code"
-          onChangeText={setPhoneNumber}
-          keyboardType="phone-pad"
-          autoCompleteType="tel"
-          style={styles.textInuput}
-        />
-        <TouchableOpacity
-          style={styles.sendVerification}
-          onPress={sendVerification}
-        >
-          <Text style={styles.buttonText}>Send Verification</Text>
-        </TouchableOpacity>
-        //Confirm Code
-        <TextInput
-          placeholder="Confirm Code"
-          onChangeText={setCode}
-          keyboardType="number-pad"
-          style={styles.textInuput}
-        />
-        <TouchableOpacity style={styles.sendCode} onPress={confirmCode}>
-          <Text style={styles.buttonText}>Confirm Verification</Text>
-        </TouchableOpacity>
-      </View>
-    </>
+    <View style={styles.container}>
+      <FirebaseRecaptchaVerifierModal
+        ref={recaptchaVerifier}
+        firebaseConfig={firebaseConfig}
+      />
+      <Text style={styles.otpText}>Login using OTP</Text>
+      <TextInput
+        placeholder="Phone Number with Country Code"
+        onChangeText={setPhoneNumber}
+        keyboardType="phone-pad"
+        autoCompleteType="tel"
+        style={styles.textInuput}
+      />
+      <TouchableOpacity
+        style={styles.sendVerification}
+        onPress={sendVerification}
+      >
+        <Text style={styles.buttonText}>Send Verification</Text>
+      </TouchableOpacity>
+      <TextInput
+        placeholder="Confirm Code"
+        onChangeText={setCode}
+        keyboardType="number-pad"
+        style={styles.textInuput}
+      />
+      <TouchableOpacity style={styles.sendCode} onPress={confirmCode}>
+        <Text style={styles.buttonText}>Confirm Verification</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
