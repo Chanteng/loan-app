@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import OTP from '../components/OTP'
 
 const About = () => {
   return (
     <View>
-      <Text>About</Text>
+   <OTP />
     </View>
   )
 }
