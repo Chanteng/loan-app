@@ -11,7 +11,7 @@ import ProgressBar from "../components/ProgressBar"
 import LottieView from "lottie-react-native";
 
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <>
       <SafeAreaView style={styles.container}>

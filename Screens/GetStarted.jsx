@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   btntxt: {
     fontSize: 20,
-    backgroundColor: "red",
+    backgroundColor: "#375372",
     height: 70,
     width: 150,
     padding: 20,

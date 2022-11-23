@@ -2,16 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import SearchScreen from "./Screens/SearchScreen";
-// import Headline from "./Screens/Headline";
-// import Tech from "./Screens/Tech";
-// import Business from "./Screens/Business";
-// import Entertainment from "./Screens/Entertainment";
-// import Health from "./Screens/Health";
-// import Science from "./Screens/Science";
-// import Sports from "./Screens/Sports";
 import GetStarted from "./Screens/GetStarted";
 import About from "./Screens/About";
+import Order from "./Screens/Order";
+import Contact from "./Screens/Contact";
+import DOB from "./components/DOB";
 import { Entypo, FontAwesome } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./Screens/Home";
@@ -37,15 +32,15 @@ function Tabs() {
       }}
     />
 
-    {/* <Tab.Screen
-      name="Headline"
-      component={Headline}
+    <Tab.Screen
+      name="Order"
+      component={Order}
       options={{
         tabBarIcon: () => (
           <FontAwesome name="newspaper-o" size={24} color="black" />
         ),
       }}
-    /> */}
+    />
 
 <Tab.Screen
       name="About"
@@ -77,12 +72,9 @@ export default function App() {
           component={Tabs}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen name="Tech" component={Tech} />
-        <Stack.Screen name="Business" component={Business} />
-        <Stack.Screen name="Entertainment" component={Entertainment} />
-        <Stack.Screen name="Health" component={Health} />
-        <Stack.Screen name="Sports" component={Sports} />
-        <Stack.Screen name="Science" component={Science} /> */}
+        <Stack.Screen name="Order" component={Order} />
+        <Stack.Screen name="Contact" component={Contact} />
+        <Stack.Screen name="DOB" component={DOB} />
       </Stack.Navigator>
     </NavigationContainer>
   );
