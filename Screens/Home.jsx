@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 
   center: {
     flex: 0.25,
-    backgroundColor: "#375372",
+    backgroundColor: "a",
     borderRadius: 30,
     justifyContent: "center",
     paddingVertical: 16
